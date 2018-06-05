@@ -38,7 +38,7 @@ public class AgendarViagem extends JFrame{
 	private static final long serialVersionUID = 5989131292707356488L;
 	
 	private JPanel contentPane = null;
-	//Declarações no corpo da classe
+	//DeclaraÃ§Ãµes no corpo da classe
 		JLabel status = new JLabel();
 		JTextField textCod = new JTextField();			
 		JTextField textEndereco = new JTextField();
@@ -59,7 +59,7 @@ public class AgendarViagem extends JFrame{
 		JFormattedTextField horaSaidaTextField = new JFormattedTextField();
 		JFormattedTextField horaRetornoTextField = new JFormattedTextField();
 		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-	//Fim declarações	
+	//Fim declaraÃ§Ãµes	
 	
 	public AgendarViagem(){
 		this.setSize(470, 470);
@@ -81,7 +81,7 @@ public class AgendarViagem extends JFrame{
 		contentPane.add(centerPanel, BorderLayout.CENTER);
 		
 		JLabel codVeiculo = new JLabel();
-		codVeiculo.setText("Código:");
+		codVeiculo.setText("CÃ³digo:");
 		centerPanel.add(codVeiculo);
 				
 		textCod.setColumns(4);
@@ -111,7 +111,7 @@ public class AgendarViagem extends JFrame{
 		centerPanel.add(testLinha);
 		
 		JLabel dataSaida = new JLabel();
-		dataSaida.setText("Data Saída:");
+		dataSaida.setText("Data SaÃ­da:");
 		centerPanel.add(dataSaida);
 		
 		JDateChooser calSaida = new JDateChooser();
@@ -125,7 +125,7 @@ public class AgendarViagem extends JFrame{
 		centerPanel.add(calRetorno);
 		
 		JLabel hrSaida = new JLabel();
-		hrSaida.setText("Hora Saída:");
+		hrSaida.setText("Hora SaÃ­da:");
 		hrSaida.setBorder(new EmptyBorder(10,0, 10, 0));
 		centerPanel.add(hrSaida);
 		
@@ -162,7 +162,7 @@ public class AgendarViagem extends JFrame{
 		centerPanel.add(quantPassViagem);
 		
 		JLabel codClienteResp = new JLabel();
-		codClienteResp.setText("    Cod. Cliente Responsável:");
+		codClienteResp.setText("    Cod. Cliente ResponsÃ¡vel:");
 		codClienteResp.setBorder(new EmptyBorder(0, 0, 10, 0));
 		centerPanel.add(codClienteResp);
 		
@@ -189,7 +189,7 @@ public class AgendarViagem extends JFrame{
 		centerPanel.add(textValorPass);		
 		
 		JLabel dadosEndereco = new JLabel();
-		dadosEndereco.setText("DADOS DO ENDEREÇO                                              ");
+		dadosEndereco.setText("DADOS DO ENDEREÃ‡O                                              ");
 		dadosEndereco.setBorder(new EmptyBorder(10, 0, 0, 115));
 		dadosEndereco.setFont(new Font("Arial", Font.BOLD, 11));
 		dadosEndereco.setForeground(Color.GRAY);
@@ -210,7 +210,7 @@ public class AgendarViagem extends JFrame{
 		centerPanel.add(textRua);
 		
 		JLabel numero = new JLabel();
-		numero.setText("Nº:");
+		numero.setText("NÂº:");
 		numero.setBorder(new EmptyBorder(10,0, 10, 0));
 		centerPanel.add(numero);
 		
@@ -304,12 +304,12 @@ public class AgendarViagem extends JFrame{
 			}
 
 			private void gravarAgendarViagem() {
-				//Extraindo informações dos campos
+				//Extraindo informaÃ§Ãµes dos campos
 				int codViagem = Integer.valueOf(textCod.getText()); //Transformando String em Int
 				String endereco = textEndereco.getText();
 				int quantPassageiro = Integer.valueOf(textQuantPass.getText()); //Transformando String em Int
-				JDateChooser dataSaida  = calSaida;
-				JDateChooser dataRetorno  = Timestamp(calRetorno.getDate().getTime());
+				JDateChooser dataSaida  = calSaida; 	//Essa linha nÃ£o Ã© necessÃ¡ria pode se passar o calSaida de forma direta *
+				JDateChooser dataRetorno  = calRetorno; //Essa linha nÃ£o Ã© necessÃ¡ria pode se passar o calSaida de forma direta *
 				Date horaSaida = Date.valueOf(horaSaidaTextField.getText().replaceAll("\\D",""));
 				Date horaRetorno  = Date.valueOf(horaRetornoTextField.getText().replaceAll("\\D",""));
 				float valorViagem = Float.valueOf(textValorViagem.getText()); //Transformando String em Float
@@ -328,6 +328,8 @@ public class AgendarViagem extends JFrame{
 				
 				//Montando TO
 				AgendarViagemTO viagem = new AgendarViagemTO(codViagem, endereco, quantPassageiro, dataSaida, dataRetorno, horaSaida, horaRetorno, statusViagem, valorViagem);
+				//Na linha abaixo o calSaida e calRetorno Ã© passado diretamente no construtor 
+				//AgendarViagemTO viagem = new AgendarViagemTO(codViagem, endereco, quantPassageiro, calSaida, calRetorno, horaSaida, horaRetorno, statusViagem, valorViagem);
 				
 				//Inserindo usuario no banco de dados - Sem uso de controller.
 				AgendarViagemDAO dao = new AgendarViagemDAO();				
