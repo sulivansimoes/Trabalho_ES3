@@ -308,7 +308,7 @@ public class AgendarViagem extends JFrame{
 				int codViagem = Integer.valueOf(textCod.getText()); //Transformando String em Int
 				String endereco = textEndereco.getText();
 				int quantPassageiro = Integer.valueOf(textQuantPass.getText()); //Transformando String em Int
-				JDateChooser dataSaida  = calSaida;
+				JDateChooser dataSaida  = Timestamp(calSaida.getDate().getTime());
 				JDateChooser dataRetorno  = Timestamp(calRetorno.getDate().getTime());
 				Date horaSaida = Date.valueOf(horaSaidaTextField.getText().replaceAll("\\D",""));
 				Date horaRetorno  = Date.valueOf(horaRetornoTextField.getText().replaceAll("\\D",""));

@@ -29,10 +29,10 @@ public class AgendarViagemDAO {
 			prepStat.setInt(1, to.getCodViagem());
 			prepStat.setString(2, to.getEndereco());
 			prepStat.setInt(3, to.getQuantPassageiro());
-			prepStat.setTimestamp(4, to.getDataSaida());
+			prepStat.setTimestamp(4, new Timestamp(calSaida.getDate().getTime()));
 //			prepStat.setDate(4, to.getDataSaida());
 			//prepStat.setString(4, to.getDataSaida());
-			prepStat.setTimestamp(5, to.getDataRetorno());
+			prepStat.setDate(5, to.getDataRetorno());
 			//prepStat.setString(5, to.getDataRetorno());
 			prepStat.setDate(6, to.getHoraSaida());
 			//prepStat.setTime(6, to.getHoraSaida());
@@ -82,9 +82,9 @@ public class AgendarViagemDAO {
 			prepStat.setString(1, to.getEndereco());
 			prepStat.setInt(2, to.getQuantPassageiro());
 			//prepStat.setDate(3, to.getDataSaida());
-			prepStat.setTimestamp(3, to.getDataSaida());			
+			prepStat.setDate(3, to.getDataSaida());			
 			//prepStat.setDate(4, to.getDataRetorno());
-			prepStat.setTimestamp(4, to.getDataRetorno());
+			prepStat.setDate(4, to.getDataRetorno());
 			//prepStat.setTime(5, to.getHoraSaida());
 			prepStat.setDate(5, to.getHoraSaida());
 			//prepStat.setTime(6, to.getHoraRetorno());

@@ -7,7 +7,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Date;
-import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -54,8 +53,8 @@ public class AgendarViagem extends JFrame{
 		JRadioButton agendadaRadioButton = new JRadioButton();
 	    JRadioButton canceladaRadioButton = new JRadioButton();
 	    JRadioButton realizadaRadioButton = new JRadioButton();
-//	    JFormattedTextField dateSaidaTextField = new JFormattedTextField();
-//		JFormattedTextField dateRetornoTextField = new JFormattedTextField();
+	    JFormattedTextField dateSaidaTextField = new JFormattedTextField();
+		JFormattedTextField dateRetornoTextField = new JFormattedTextField();
 		JFormattedTextField horaSaidaTextField = new JFormattedTextField();
 		JFormattedTextField horaRetornoTextField = new JFormattedTextField();
 		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -308,8 +307,8 @@ public class AgendarViagem extends JFrame{
 				int codViagem = Integer.valueOf(textCod.getText()); //Transformando String em Int
 				String endereco = textEndereco.getText();
 				int quantPassageiro = Integer.valueOf(textQuantPass.getText()); //Transformando String em Int
-				JDateChooser dataSaida  = calSaida;
-				JDateChooser dataRetorno  = Timestamp(calRetorno.getDate().getTime());
+				Date dataSaida  = Date.valueOf(dateSaidaTextField.getText());
+				Date dataRetorno  = Date.valueOf(dateRetornoTextField.getText().replaceAll("\\D",""));
 				Date horaSaida = Date.valueOf(horaSaidaTextField.getText().replaceAll("\\D",""));
 				Date horaRetorno  = Date.valueOf(horaRetornoTextField.getText().replaceAll("\\D",""));
 				float valorViagem = Float.valueOf(textValorViagem.getText()); //Transformando String em Float
@@ -349,11 +348,6 @@ public class AgendarViagem extends JFrame{
 					JOptionPane.showMessageDialog(null, "Viagem realizada com sucesso!");
 				}	
 					
-			}
-
-			private JDateChooser Timestamp(long time) {
-				// TODO Auto-generated method stub
-				return null;
 			}
 		});
 		westPanel.add(gravar);

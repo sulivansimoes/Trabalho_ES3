@@ -2,23 +2,20 @@ package br.edu.univas.sistemadeviagem.model.TO;
 
 import java.sql.Date;
 import java.sql.Time;
-import java.sql.Timestamp;
-
-import com.toedter.calendar.JDateChooser;
 
 public class AgendarViagemTO {
 	
 	private int codViagem;
 	private String endereco;
 	private int quantPassageiro;
-	private Timestamp dataSaida;
-	private Timestamp dataRetorno;
+	private Date dataSaida;
+	private Date dataRetorno;
 	private Date horaSaida;
 	private Date horaRetorno;
 	private int statusViagem;
 	private float valorViagem;
 	
-	public AgendarViagemTO(int codViagem, String endereco, int quantPassageiro, Timestamp dataSaida, Timestamp dataRetorno, 
+	public AgendarViagemTO(int codViagem, String endereco, int quantPassageiro, Date dataSaida,	Date dataRetorno, 
 			Date horaSaida, Date horaRetorno, int statusViagem, float valorViagem){
 		this.codViagem = codViagem;
 		this.endereco = endereco;
@@ -56,20 +53,20 @@ public class AgendarViagemTO {
 		this.quantPassageiro = quantPassageiro;
 	}
 
-	public Timestamp getDataSaida() {
+	public Date getDataSaida() {
 		return dataSaida;
 	}
 
-	public void setDataSaida(JDateChooser dataSaida) {
-		this.dataSaida = new Timestamp(dataSaida.getDate().getTime());
+	public void setDataSaida(Date dataSaida) {
+		this.dataSaida = dataSaida;
 	}
 
-	public Timestamp getDataRetorno() {
+	public Date getDataRetorno() {
 		return dataRetorno;
 	}
 
-	public void setDataRetorno(JDateChooser dataRetorno) {
-		this.dataRetorno = new Timestamp(dataRetorno.getDate().getTime());
+	public void setDataRetorno(Date dataRetorno) {
+		this.dataRetorno = dataRetorno;
 	}
 
 	public Date getHoraSaida() {

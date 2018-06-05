@@ -22,7 +22,7 @@ public class Menu extends Frame {
 	JMenuBar barra;
 	JSeparator separator;
 	JMenu planilhasMenu,cadMenu, relatoriosMenu, ajudaMenu, sairMenu;
-	JMenuItem cadClientes, cadUsuarios, cadMotoristas, cadVeiculos, cadViagem, relatorioQuantC, relatorioQuantM, relatorioQuantU, relatorioQuantV, relatorioQuantVA, manual;
+	JMenuItem cadClientes, cadUsuarios, cadMotoristas, cadVeiculos, cadViagem, relatorioQuantM, relatorioQuantU, relatorioQuantV, relatorioQuantVA, manual;
 	JMenu relatoriosClientes, relatoriosUsuarios, relatoriosMotorista, relatoriosVeiculos, relatoriosViagem;
 	JMenuItem fechar;
 	
@@ -109,9 +109,6 @@ public class Menu extends Frame {
 		sairMenu.add(fechar);
 		
 		//Relatorios de Quantidades
-		relatorioQuantC = new JMenuItem("Clientes Cadastrados");
-		relatoriosClientes.add(relatorioQuantC);
-		
 		relatorioQuantM = new JMenuItem("Motoristas Cadastrados");
 		relatoriosMotorista.add(relatorioQuantM);
 		
