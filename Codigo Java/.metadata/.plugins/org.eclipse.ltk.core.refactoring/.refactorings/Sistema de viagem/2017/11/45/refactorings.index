@@ -1,0 +1,26 @@
+1510003836437	Rename type 'MunicipioTO'
+1510006809470	Rename compilation unit 'CadastroUsuario.java'
+1510007252840	Rename compilation unit 'AgendarViagem.java'
+1510009418908	Rename package 'br.edu.univas.si.model.util'
+1510009444812	Rename package 'br.edu.univas.si.model.to'
+1510009457098	Rename package 'br.edu.univas.si.model.dao'
+1510009503765	Rename type 'CadastroMotoristaTO'
+1510009516941	Rename type 'CadastroUsuarioTO'
+1510009536201	Rename type 'CadastroVeiculoTO'
+1510009667267	Rename type 'CadastrarUsuario'
+1510010798406	Rename type 'ExceptionAgendarViagem'
+1510014301753	Rename type 'CadastarViagemException'
+1510048210591	Rename package 'br.edu.univas.tp4.model.dao'
+1510048238063	Rename package 'br.edu.univas.tp4.model.to'
+1510048264697	Rename package 'br.edu.univas.tp4.model.util'
+1510139015406	Delete element
+1510159211520	Delete element
+1510159623490	Rename type 'mainUsuario'
+1510159644216	Rename type 'Usuario'
+1510162203483	Delete element
+1510219305758	Delete element
+1510401878471	Delete element
+1510402375793	Delete element
+1510406168578	Rename package 'br.edu.univas.tp4.view.Imagem'
+1510406490996	Rename resource 'ICONE.png'
+1510417248195	Delete element

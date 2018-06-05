@@ -1,0 +1,133 @@
+package br.edu.univas.tp4.view.Frame;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+import br.edu.univas.tp4.view.Util.Frame;
+
+public class CadastrarUsuario  extends JFrame{
+
+	private static final long serialVersionUID = 1987604675648829199L;
+	
+	private JPanel contentPane = null;
+	
+	public CadastrarUsuario(){
+		
+	//	this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Imagem/icone.png")));
+		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Imagem/mapa (1.png")));
+		
+		this.setSize(500, 290);
+		this.setTitle("Cadastro de Usuário");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+		setResizable(false);
+		addComponents();
+	}
+	
+	private void addComponents(){
+		
+		contentPane = new JPanel();
+		contentPane.setLayout(new BorderLayout());
+		this.setContentPane(contentPane);
+		
+		JPanel centerPanel = new JPanel();
+		centerPanel.setBackground(Color.lightGray);
+		centerPanel.setPreferredSize(new Dimension(25, 0));
+		contentPane.add(centerPanel, BorderLayout.CENTER); 		
+		
+		JLabel nomeUsuario = new JLabel();
+		nomeUsuario.setText("Nome do Usuário:  ");
+		centerPanel.add(nomeUsuario);
+		
+		JTextField textUsuario = new JTextField();
+		textUsuario.setColumns(41);
+		centerPanel.add(textUsuario);
+		
+		JLabel cpfUsuario = new JLabel();
+		cpfUsuario.setText("     CPF:");
+		centerPanel.add(cpfUsuario);
+		
+		JLabel loginUsuario = new JLabel();
+		loginUsuario.setText("                                                             Login:  ");
+		centerPanel.add(loginUsuario);
+						
+		JTextField textCPF = new JTextField();
+		textCPF.setColumns(20);
+		centerPanel.add(textCPF);
+		
+		JTextField textLogin = new JTextField();
+		textLogin.setColumns(20);
+		centerPanel.add(textLogin);
+		
+		JLabel senhaUsuario = new JLabel();
+		senhaUsuario.setText("      Senha:  ");
+		centerPanel.add(senhaUsuario);
+		
+		JLabel senhaComfirmaUsuario = new JLabel();
+		senhaComfirmaUsuario.setText("                                                    Confirmar Senha:  ");
+		centerPanel.add(senhaComfirmaUsuario);
+		
+		JPasswordField textSenha = new JPasswordField();
+		textSenha.setColumns(20);
+		centerPanel.add(textSenha);
+		
+		JPasswordField textSenhaComfirma = new JPasswordField();
+		textSenhaComfirma.setColumns(20);
+		centerPanel.add(textSenhaComfirma);
+		
+		JLabel acessoUsuario = new JLabel();
+		acessoUsuario.setText("                                  Perfil de Acesso:                           ");
+		centerPanel.add(acessoUsuario);
+		
+		JComboBox<String> courseComboBox = new JComboBox<>();
+		courseComboBox.addItem("Administrador");
+		courseComboBox.addItem("Gerência");
+		courseComboBox.addItem("Usuário");
+		
+		courseComboBox.setPreferredSize(new Dimension(400, 30));		
+		centerPanel.add(courseComboBox);
+		
+		JPanel southPanel = new JPanel();
+		southPanel.setPreferredSize(new Dimension(0, 65));
+		southPanel.setBackground(Color.LIGHT_GRAY);
+		contentPane.add(southPanel, BorderLayout.SOUTH);
+		
+		JButton cadButton = new JButton();
+		cadButton.setText("Cadastrar");
+		cadButton.setPreferredSize(new Dimension(100, 50));
+		southPanel.add(cadButton);
+		
+		JButton cancelarButton = new JButton();
+		cancelarButton.setText("Cancelar");
+		cancelarButton.setPreferredSize(new Dimension(100, 50));
+		southPanel.add(cancelarButton);
+	}
+	
+	private void cadastraUsuario(){
+		int codUsuario;
+		String nome;
+		int cpf;
+		String senha;
+//		int rg;
+//		char sexo;
+//		Date dataNascimento;
+//		int telefone;
+//		String endereco;
+	}
+	
+	public static void main(String[] args){
+		Frame.setlookAndFeel(Frame.ACRYL);
+		CadastrarUsuario tela = new CadastrarUsuario();
+		tela.setVisible(true);
+	}
+}
